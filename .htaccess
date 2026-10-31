@@ -1,0 +1,4 @@
+# Temporary: send all requests into public/ while the cPanel document root is still the project folder.
+# Delete this file once the document root is set to etudeworld.com/public.
+RewriteEngine On
+RewriteRule ^(.*)$ public/$1 [L]
