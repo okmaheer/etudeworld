@@ -69,8 +69,4 @@ return [
         'model' => env('ANTHROPIC_MODEL', 'claude-sonnet-4-5'),
     ],
 
-    // Lets you test student features on your own computer before the Google/Microsoft keys exist.
-    // Turned on automatically when APP_ENV=local; never shown on the live website.
-    'student_test_login' => env('STUDENT_TEST_LOGIN', env('APP_ENV') === 'local'),
-
 ];

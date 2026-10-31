@@ -142,8 +142,6 @@ Route::get('login/{provider}', [\App\Http\Controllers\Student\AuthController::cl
     ->whereIn('provider', ['google', 'microsoft'])->name('student.redirect');
 Route::get('login/{provider}/callback', [\App\Http\Controllers\Student\AuthController::class, 'callback'])
     ->whereIn('provider', ['google', 'microsoft'])->name('student.callback');
-Route::post('login/test', [\App\Http\Controllers\Student\AuthController::class, 'testLogin'])
-    ->middleware('throttle:10,1')->name('student.test-login');
 Route::post('logout', [\App\Http\Controllers\Student\AuthController::class, 'logout'])->name('student.logout');
 Route::get('my-portal', [\App\Http\Controllers\Student\PortalController::class, 'index'])->name('student.portal');
 Route::post('my-portal/results', [\App\Http\Controllers\Student\PortalController::class, 'storeResult'])

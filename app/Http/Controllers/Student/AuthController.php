@@ -35,7 +35,6 @@ class AuthController extends Controller
         return view('student.login', [
             'google'    => self::configured('google'),
             'microsoft' => self::configured('microsoft'),
-            'testLogin' => (bool) config('services.student_test_login') && app()->environment('local'),
             'reason'    => $request->query('reason'),
         ]);
     }
@@ -119,16 +118,6 @@ class AuthController extends Controller
         return $this->loginStudent($request, strtolower($email), $profile['name'] ?: $email, $provider, $profile['id'], $profile['avatar'], (bool) $trusted);
     }
 
-    /** Test sign-in for your own computer only (until the Google / Microsoft keys are added). */
-    public function testLogin(Request $request)
-    {
-        abort_unless(config('services.student_test_login') && app()->environment('local'), 404);
-        $data = $request->validate(['name' => ['required', 'string', 'max:120'], 'email' => ['required', 'email', 'max:190']]);
-
-        // The test sign-in does not prove the email address, so it only counts for paid access on a developer's own computer
-        return $this->loginStudent($request, strtolower($data['email']), $data['name'], 'test', null, null, app()->environment('local') && in_array($request->ip(), ['127.0.0.1', '::1'], true));
-    }
-
     public function logout(Request $request)
     {
         Auth::guard('student')->logout();
@@ -141,7 +130,7 @@ class AuthController extends Controller
     {
         $student = Student::firstOrNew(['email' => $email]);
         $student->fill([
-            'name' => $student->exists && $provider === 'test' ? $student->name : $name,
+            'name' => $name,
             'provider' => $provider, 'provider_id' => $id, 'avatar' => $avatar, 'last_login_at' => now(), 'email_trusted' => $trusted,
         ])->save();
 

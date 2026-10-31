@@ -40,18 +40,6 @@
                 @endif
             </div>
 
-            @if ($testLogin)
-                {{-- Only on your own computer, until the Google / Microsoft keys are added --}}
-                <form method="POST" action="{{ route('student.test-login') }}" class="auth-test">
-                    @csrf
-                    <p><strong>Test sign-in</strong> – only shown on your own computer, so you can try the student features before Google/Microsoft sign-in is set up.</p>
-                    <input type="text" name="name" placeholder="Name" required value="{{ old('name') }}">
-                    <input type="email" name="email" placeholder="Email" required value="{{ old('email') }}">
-                    @error('email') <p class="auth-error">{{ $message }}</p> @enderror
-                    <button type="submit" class="btn btn-primary">Sign in for testing</button>
-                </form>
-            @endif
-
             <p class="auth-small">Listening and Reading practice don't need an account. Writing and Speaking do, because your answers are evaluated.</p>
         </div>
     </div>
