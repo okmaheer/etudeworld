@@ -1,0 +1,52 @@
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;max-width:1000px;margin:0 auto}
+.tool-card{display:block;background:#fff;border:1px solid #e3e7ef;border-radius:16px;padding:26px;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.tool-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(28,35,51,.1)}
+.tool-card h3{font-size:1.15rem;margin:0 0 8px}.tool-card p{color:var(--muted);margin:0 0 14px;font-size:.96rem}
+.tool-card__go{font-weight:700;color:var(--ielts)}
+.tool-wrap{max-width:860px}
+.tool-box{background:#fff;border:1px solid #e3e7ef;border-radius:18px;padding:28px;box-shadow:0 6px 24px rgba(28,35,51,.06)}
+.tool-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.tool-field span{display:block;font-weight:600;font-size:.92rem;margin-bottom:6px}
+.tool-field select,.tool-field input{width:100%;padding:12px;border:1px solid #cfd6e4;border-radius:10px;font:inherit;background:#fff}
+.tool-result{margin-top:24px}
+.tool-big{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;background:#f4f6fb;border-radius:14px;padding:20px 24px}
+.tool-big b{font-size:2.6rem;line-height:1;color:var(--ielts)}.tool-big span{color:var(--muted)}
+.tool-table{width:100%;border-collapse:collapse;margin-top:14px;font-size:.97rem}
+.tool-table th,.tool-table td{padding:10px 12px;border-bottom:1px solid #e8ebf2;text-align:left}
+.tool-table th{background:#f4f6fb;font-weight:700}
+.tool-table td:not(:first-child),.tool-table th:not(:first-child){text-align:center}
+.tool-result h3{margin:22px 0 4px;font-size:1.05rem}
+.tool-empty{color:var(--muted)}
+.tool-note{margin-top:22px;font-size:.88rem;color:var(--muted);border-top:1px solid #e8ebf2;padding-top:14px}
+.tool-more{margin-top:36px}.tool-more h2{font-size:1.1rem}
+.tool-links{display:flex;flex-wrap:wrap;gap:10px}
+.tool-links a{border:1px solid #cfd6e4;border-radius:999px;padding:8px 16px;font-weight:600;font-size:.92rem;color:var(--ink)}
+.tool-links a:hover{border-color:var(--ielts);color:var(--ielts)}
+@media(max-width:600px){.tool-box{padding:18px}.tool-table{font-size:.88rem}.tool-table th,.tool-table td{padding:8px 6px}}
+
+.tool-faq{margin-top:36px}.tool-faq h2{font-size:1.3rem;margin-bottom:12px}
+.tool-faq details{background:#fff;border:1px solid #e3e7ef;border-radius:12px;margin-bottom:10px}
+.tool-faq summary{cursor:pointer;font-weight:700;padding:14px 18px;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.tool-faq summary::-webkit-details-marker{display:none}
+.tool-faq summary::after{content:'+';font-size:1.4rem;line-height:1;color:var(--ielts);flex:none}
+.tool-faq details[open] summary::after{content:'\2212'}
+.tool-faq details p{margin:0;padding:0 18px 16px;color:var(--muted)}
+
+.tool-practice{margin-top:32px}.tool-practice h2{font-size:1.3rem;margin-bottom:12px}
+.tool-practice__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.tool-practice__card{display:flex;flex-direction:column;gap:6px;border-radius:16px;padding:22px;color:#fff;transition:transform .15s,box-shadow .15s}
+.tool-practice__card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(28,35,51,.18)}
+.tool-practice__card strong{font-size:1.1rem}.tool-practice__card span{opacity:.92;font-size:.94rem}
+.tool-practice__card em{font-style:normal;font-weight:700;margin-top:6px}
+.tool-practice__card--ielts{background:linear-gradient(135deg,var(--ielts),#ff5e6c)}
+.tool-practice__card--celpip{background:linear-gradient(135deg,var(--celpip),#2fc4ae)}
+.tool-practice__card--toefl{background:linear-gradient(135deg,#1f4fd6,#4f86ff)}
+.sp-weak{border:0;padding:0;margin:0;grid-column:1/-1}
+.sp-weak>span{display:block;font-weight:600;font-size:.92rem;margin-bottom:6px}
+.sp-check{display:inline-flex;align-items:center;gap:6px;margin:0 16px 6px 0;font-weight:500}
+.sp-submit{grid-column:1/-1}
+.sp-summary{background:#f4f6fb;border-radius:14px;padding:18px 22px;margin-bottom:14px}
+.sp-week{border:1px solid #e3e7ef;border-radius:12px;padding:14px 18px;margin-bottom:10px;background:#fff}
+.sp-week h3{margin:0 0 6px;font-size:1.02rem}.sp-week ul{margin:0;padding-left:20px}
+.sp-tips{background:#fff8e6;border:1px solid #f3dfa3;border-radius:12px;padding:14px 18px 14px 36px;margin-top:14px}
+.sp-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
