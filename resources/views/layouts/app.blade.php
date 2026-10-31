@@ -8,7 +8,7 @@
     <title>{{ $siteSeo?->meta_title }}@unless ($siteSeo?->meta_title)@yield('title', config('app.name') . ' – Learn Languages & Practise IELTS and CELPIP')@endunless</title>
     <meta name="description" content="{{ $siteSeo?->meta_description }}@unless ($siteSeo?->meta_description)@yield('description', 'Free resources, proven study methods and practice tests for IELTS, CELPIP and learning a new language.')@endunless">
 
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow, noai, noimageai">
     <link rel="icon" href="{{ \App\Models\SiteSetting::logoUrl() }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

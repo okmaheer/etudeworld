@@ -5,6 +5,10 @@
 
     RewriteEngine On
 
+    # Block AI crawlers (robots.txt alone is only a request)
+    RewriteCond %{HTTP_USER_AGENT} (GPTBot|ChatGPT-User|OAI-SearchBot|ClaudeBot|Claude-Web|Claude-User|Claude-SearchBot|anthropic-ai|CCBot|PerplexityBot|Perplexity-User|Bytespider|Amazonbot|Meta-ExternalAgent|Meta-ExternalFetcher|FacebookBot|cohere-ai|cohere-training-data-crawler|Diffbot|ImagesiftBot|Omgilibot|YouBot|Timpibot|DuckAssistBot|MistralAI-User|AI2Bot|Ai2Bot-Dolma|PanguBot|Kangaroo Bot|Scrapy|omgili) [NC]
+    RewriteRule .* - [F,L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

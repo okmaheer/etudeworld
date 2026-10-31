@@ -17,7 +17,7 @@ class SecurityHeaders
         $response->headers->set('Referrer-Policy', 'strict-origin-when-cross-origin');
         $response->headers->set('Permissions-Policy', 'camera=(), geolocation=(), payment=()');
         // Site must not appear in search results yet. Remove this line to allow indexing.
-        $response->headers->set('X-Robots-Tag', 'noindex, nofollow');
+        $response->headers->set('X-Robots-Tag', 'noindex, nofollow, noai, noimageai');
         if ($request->isSecure()) $response->headers->set('Strict-Transport-Security', 'max-age=31536000');
 
         return $response;
